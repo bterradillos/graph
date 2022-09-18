@@ -92,6 +92,16 @@
 </script>
 
 <script language="javascript" type="text/javascript" src="<?php echo $path;?>Lib/moment.min.js?v=<?php echo $js_css_version; ?>"></script>
+<script>
+    var _user = {
+        lang : "<?php if (isset($_SESSION['lang'])) echo $_SESSION['lang']; ?>"
+    }
+    _locale_loaded = function (event){
+        // callback when locale file loaded
+        graph_reload(); // redraw xaxis with correct monthNames and dayNames
+    }
+</script>
+<script language="javascript" type="text/javascript" src="<?php echo $path;?>Lib/user_locale.js?v=<?php echo $js_css_version; ?>"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $path;?>Modules/graph/graph.js?v=<?php echo $js_css_version; ?>"></script>
 
 <script>
