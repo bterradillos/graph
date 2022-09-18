@@ -9,7 +9,7 @@
     http://openenergymonitor.org
     */
 
-    global $path, $embed;
+    global $path, $embed, $settings;
     global $fullwidth;
     $fullwidth = true;
     
@@ -94,7 +94,7 @@
 <script language="javascript" type="text/javascript" src="<?php echo $path;?>Lib/moment.min.js?v=<?php echo $js_css_version; ?>"></script>
 <script>
     var _user = {
-        lang : "<?php if (isset($_SESSION['lang'])) echo $_SESSION['lang']; ?>"
+	lang : "<?php echo $settings["interface"]["default_language"] ?>"
     }
     _locale_loaded = function (event){
         // callback when locale file loaded
